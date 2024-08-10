@@ -1,4 +1,3 @@
-// src/components/WalletCard.tsx
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
@@ -12,7 +11,7 @@ const WalletCard: React.FC = () => {
 
 const styles = StyleSheet.create({
   walletContainer: {
-    position: 'absolute', // Faz com que o componente seja flutuante
+    position: 'absolute',
     height: 60,
     width: 330,
     backgroundColor: '#fff',

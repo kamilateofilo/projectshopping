@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { useCart } from '../../components/Components/hooks/useCart'; // Supondo que você tenha um hook personalizado para o carrinho
+import { useCart } from '../../components/Components/hooks/useCart'; 
 import { useNavigation } from '@react-navigation/native';
 import BottomTabNavigator from '../navigation/TabNavigation';
 
 
 const CartScreen: React.FC = () => {
-  const { cartItems } = useCart(); // Use o hook para obter os itens do carrinho
+  const { cartItems } = useCart(); 
   
   const navigation = useNavigation();
 

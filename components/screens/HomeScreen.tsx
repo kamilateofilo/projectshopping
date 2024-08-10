@@ -128,7 +128,7 @@ const HomeScreen: React.FC = () => {
             <View style={styles.viewMoreContainer}>
               <Pressable
                 style={styles.viewMoreButton}
-                onPress={() => navigation.navigate('ProductListScreen' as never)} // Navegar para a tela de todos os produtos
+                onPress={() => navigation.navigate('ProductListScreen' as never)} 
               >
                 <Text style={styles.viewMoreText}>Ver mais</Text>
               </Pressable>
@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
   productsContainer: {
     flex: 1,
     paddingHorizontal: 10,
-    paddingBottom: 20, // Ajustar o padding para garantir que o botão esteja visível
+    paddingBottom: 20, 
     marginBottom: 50
   },
   productList: {

@@ -1,4 +1,3 @@
-// src/screens/UserScreen.tsx
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -12,7 +11,7 @@ const UserScreen: React.FC = () => {
         <View style={styles.background} />
         <View style={styles.profileContainer}>
           <Image
-            source={{ uri: 'https://via.placeholder.com/150' }} // Substitua pelo URL da foto do perfil
+            source={{ uri: 'https://via.placeholder.com/150' }} 
             style={styles.profilePic}
           />
           <Text style={styles.username}>Nome do Usuário</Text>

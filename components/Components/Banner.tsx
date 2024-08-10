@@ -1,4 +1,4 @@
-// src/components/Carousel.tsx
+
 import React, { useEffect, useRef } from 'react';
 import { View, Image, StyleSheet, Dimensions, ScrollView } from 'react-native';
 

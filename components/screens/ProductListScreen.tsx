@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, StyleSheet, ActivityIndicator, TouchableOpacity, Modal, Button } from 'react-native';
-import ProductCard from '../Components/Card'; // Certifique-se de que o caminho está correto
+import ProductCard from '../Components/Card'; 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
 import { Picker } from '@react-native-picker/picker';
 import BottomTabNavigator from '../navigation/TabNavigation';
 
-// Defina um tipo para os produtos
+
 interface Product {
   id: number;
   name: string;
@@ -16,7 +16,7 @@ interface Product {
   category: string;
 }
 
-// Mapeamento de categorias para tradução
+
 const categoryTranslations: Record<string, string> = {
   "lipstick": "Batom",
   "foundation": "Base",
@@ -36,7 +36,7 @@ const ProductListScreen: React.FC = () => {
   const [loadingMore, setLoadingMore] = useState<boolean>(false);
   const [hasMore, setHasMore] = useState<boolean>(true);
   const [selectedCategory, setSelectedCategory] = useState<string>('Todas as Categorias');
-  const [categories, setCategories] = useState<string[]>(['Todas as Categorias']); // Estado das categorias como array de strings
+  const [categories, setCategories] = useState<string[]>(['Todas as Categorias']); 
   const [showModal, setShowModal] = useState<boolean>(false);
   const [modalMessage, setModalMessage] = useState<string>('');
 
@@ -49,7 +49,7 @@ const ProductListScreen: React.FC = () => {
       const data: Product[] = await response.json();
       console.log('Fetched data:', data);
 
-      // Filtra produtos por categoria se uma categoria estiver selecionada
+      
       const filteredData = category ? data.filter((product) => product.category === category) : data;
 
       const paginatedProducts = filteredData.slice((pageNumber - 1) * 10, pageNumber * 10);
@@ -109,10 +109,10 @@ const ProductListScreen: React.FC = () => {
     console.log(`Add product ${id} to cart`);
     setModalMessage(`Produto ${id} adicionado ao carrinho!`);
     setShowModal(true);
-    // Simule um delay para o efeito do modal
+    
     await new Promise(resolve => setTimeout(resolve, 2000));
     setShowModal(false);
-    // Implemente a lógica para adicionar ao carrinho
+    
   };
 
   const handleToggleFavorite = (id: number) => {
@@ -133,7 +133,7 @@ const ProductListScreen: React.FC = () => {
         id={item.id}
         title={item.name}
         description={item.description}
-        price={price} // Passe o preço formatado
+        price={price} 
         image={item.image_link}
         onAddToCart={handleAddToCart}
         onToggleFavorite={handleToggleFavorite}
@@ -155,9 +155,9 @@ const ProductListScreen: React.FC = () => {
             style={styles.picker}
             onValueChange={(itemValue: string) => {
               setSelectedCategory(itemValue);
-              setProducts([]); // Limpa produtos atuais ao mudar a categoria
-              setPage(1); // Reinicia a paginação
-              fetchProducts(1, itemValue === 'Todas as Categorias' ? '' : itemValue); // Recarrega produtos com a nova categoria
+              setProducts([]); 
+              setPage(1); 
+              fetchProducts(1, itemValue === 'Todas as Categorias' ? '' : itemValue);
             }}
           >
             {categories.map((category) => (
@@ -175,8 +175,8 @@ const ProductListScreen: React.FC = () => {
             data={products}
             renderItem={renderItem}
             keyExtractor={(item) => item.id.toString()}
-            numColumns={2} // Define o número de colunas
-            columnWrapperStyle={styles.row} // Centraliza as colunas
+            numColumns={2} 
+            columnWrapperStyle={styles.row} 
             onEndReached={handleLoadMore}
             onEndReachedThreshold={0.1}
             ListFooterComponent={loadingMore ? <ActivityIndicator size="large" color="#7B22D3" /> : null}
@@ -247,15 +247,15 @@ const styles = StyleSheet.create({
   modalContainer: {
     flex: 1,
     backgroundColor: '#fff',
-    borderTopLeftRadius: 20, // Borda arredondada no topo
-    borderTopRightRadius: 20, // Borda arredondada no topo
-    marginTop: -10, // Para ajustar a posição se necessário
+    borderTopLeftRadius: 20, 
+    borderTopRightRadius: 20, 
+    marginTop: -10, 
   },
   modalOverlay: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Fundo escuro para o modal
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', 
   },
   modalContent: {
     width: '80%',

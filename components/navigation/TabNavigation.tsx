@@ -1,4 +1,3 @@
-// src/components/BottomTabNavigator.tsx
 import React from "react";
 import { View, Pressable, StyleSheet } from "react-native";
 import { useNavigation, NavigationProp, ParamListBase, useRoute } from '@react-navigation/native';
@@ -9,7 +8,7 @@ const BottomTabNavigator: React.FC = () => {
   const route = useRoute();
 
   const getIconColor = (screenName: string) => {
-    return route.name === screenName ? '#7B22D3' : '#ccc'; // Cor ativa e inativa
+    return route.name === screenName ? '#7B22D3' : '#ccc'; 
   };
 
   return (

@@ -3,7 +3,7 @@ import { View, Text, Image, Pressable, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../app/types'; // Ajuste o caminho conforme necessário
+import { RootStackParamList } from '../../app/types'; 
 
 interface ProductCardProps {
   id: number;
@@ -27,8 +27,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
   isFavorite,
 }) => {
   const handleAddToCart = () => {
-    onAddToCart(id); // Adiciona ao carrinho
-    // Não navega para a página do carrinho
+    onAddToCart(id);
+    
   };
 
   const truncatedTitle = title.split(' ').slice(0, 3).join(' ');

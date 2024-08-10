@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, Alert } from 'react-native';
 import Modal from 'react-native-modal';
 import { useNavigation } from '@react-navigation/native';
-// import auth from '@react-native-firebase/auth'; // Importe o Firebase Authentication (comentado)
+// import auth from '@react-native-firebase/auth'; 
 
 interface LoginModalProps {
   isVisible: boolean;
