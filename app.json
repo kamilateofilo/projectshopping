@@ -31,6 +31,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "ee1624da-bf44-41ba-80ce-febd13ad8f65"
+      }
+    },
+    "owner": "kamila.teofilo"
   }
 }

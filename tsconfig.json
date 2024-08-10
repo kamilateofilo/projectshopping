@@ -6,12 +6,17 @@
       "@/*": [
         "./*"
       ]
-    }
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types" // ou qualquer diretório onde você colocou react-native-push-notification.d.ts
+    ]
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     ".expo/types/**/*.ts",
-    "expo-env.d.ts"
+    "expo-env.d.ts",
+    "react-native-push-notification.d.ts" // Adicione isso se o arquivo estiver na raiz
   ]
 }
